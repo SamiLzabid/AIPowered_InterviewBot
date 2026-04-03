@@ -5,7 +5,7 @@ from streamlit_js_eval import streamlit_js_eval
 st.set_page_config(page_title="AI Interview Assistant", page_icon="🤖")
 st.title("AI Interview Assistant")
 
-# ---------------- SESSION STATE ---------------- #
+# SESSION STATE
 if "setup_complete" not in st.session_state:
     st.session_state.setup_complete = False   
 if "user_message_count" not in st.session_state:
@@ -17,14 +17,14 @@ if "messages" not in st.session_state:
 if "chat_complete" not in st.session_state:
     st.session_state.chat_complete = False    
 
-# ---------------- FUNCTIONS ---------------- #
+# FUNCTIONS 
 def complete_setup():
     st.session_state.setup_complete = True
 
 def show_feedback():
     st.session_state.feedback_shown = True
 
-# ---------------- SETUP UI ---------------- #
+# SETUP UI
 if not st.session_state.setup_complete:
     st.subheader('Personal Information', divider='rainbow')
 
@@ -57,7 +57,7 @@ if not st.session_state.setup_complete:
         complete_setup()
         st.rerun()
 
-# ---------------- CHATBOT ---------------- #
+# CHATBOT 
 if st.session_state.setup_complete and not st.session_state.feedback_shown and not st.session_state.chat_complete:
 
     st.info("Start by introducing yourself.", icon="👋")
@@ -91,7 +91,7 @@ if st.session_state.setup_complete and not st.session_state.feedback_shown and n
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-    # Chat input (limit to 5 responses)
+    # Chat input
     if st.session_state.user_message_count < 5:
         if prompt := st.chat_input("Your Answer.", max_chars=300):
 
@@ -128,7 +128,7 @@ if st.session_state.setup_complete and not st.session_state.feedback_shown and n
         st.session_state.chat_complete = True
 
 
-# ---------------- FEEDBACK ---------------- #
+# FEEDBACK 
 if st.session_state.chat_complete and not st.session_state.feedback_shown:
     if st.button("Get Feedback"):
         show_feedback()
@@ -136,7 +136,7 @@ if st.session_state.chat_complete and not st.session_state.feedback_shown:
 if st.session_state.feedback_shown:
     st.subheader("📊 Interview Feedback")
 
-    # Clean conversation (remove system)
+    # Clean conversation
     conversation_history = "\n".join([
         f"{msg['role']}: {msg['content']}"
         for msg in st.session_state.messages
