@@ -60,5 +60,11 @@ Frontend
 •	Node.js 18+ installed
 •	A valid Groq API Key
 
+## Web App SS
+<img width="1111" height="881" alt="image" src="https://github.com/user-attachments/assets/c04da9b8-3dc7-405a-8eed-6a7f768a2b85" />
+<img width="900" height="626" alt="image" src="https://github.com/user-attachments/assets/fe95dab7-3c71-45ca-ac5a-00ef468dbebe" />
+<img width="1122" height="722" alt="image" src="https://github.com/user-attachments/assets/ad092092-d440-4954-8915-06332671e87b" />
+
+
 
 
