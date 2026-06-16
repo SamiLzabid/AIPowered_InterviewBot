@@ -1,4 +1,4 @@
-# AI Interview Assistant: Enterprise Simulation Protocol
+# AI Interview Assistant
 
 An enterprise-grade, asynchronous AI Interview Assistant that acts as a strict HR evaluator. The application features a clean decoupled architecture utilizing **FastAPI** for low-latency backend orchestration and token streaming, coupled with a highly responsive **React + Tailwind CSS** frontend dashboard. 
 
